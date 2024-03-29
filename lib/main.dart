@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlobalLoaderOverlay(
         child: MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Event ticket check',
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
         fontFamily: 'Montserrat',

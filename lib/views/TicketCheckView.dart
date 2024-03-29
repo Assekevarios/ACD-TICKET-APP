@@ -1,3 +1,4 @@
+import 'package:event_ticket_checker/views/CheckResultView.dart';
 import 'package:event_ticket_checker/widgets/CustomButton.dart';
 import 'package:event_ticket_checker/widgets/CustomTextField.dart';
 
@@ -42,18 +43,25 @@ class _TicketCheckViewState extends State<TicketCheckView> {
                 context.loaderOverlay.show();
                 Future.delayed(const Duration(seconds: 1), () {
                   context.loaderOverlay.hide();
-                }).then(
-                  (value) {
-                    showDialog(
-                      context: context,
-                      builder: (context) {
-                        return const AlertDialog(
-                          content: Text('The ticket is valid'),
-                        );
-                      },
-                    );
-                  },
-                );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CheckResult(),
+                    ),
+                  );
+                });
+                // .then(
+                //   (value) {
+                //     showDialog(
+                //       context: context,
+                //       builder: (context) {
+                //         return const AlertDialog(
+                //           content: Text('The ticket is valid'),
+                //         );
+                //       },
+                //     );
+                //   },
+                // );
               },
             ),
             const SizedBox(
